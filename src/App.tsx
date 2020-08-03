@@ -9,6 +9,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import './App.css';
+import SignIn from './components/SignIn';
 
 const App: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const App: React.FC = () => {
               <Redirect to="/auth" />
             </Route>
             <Route to="/auth"  component={Authentication} />
-            <Route path="/login" component={Login} />
+            <Route path="/signin" component={SignIn} />
             <BaseLayout>
               <Route path="/home" component={Home} />
               <Route path="/about" component={About} />
@@ -34,10 +35,11 @@ const App: React.FC = () => {
   );
 }
 
-const Authentication: React.FC = ({ children }) => {
+const Authentication: React.FC = ({ children, ...props }) => {
+  console.log('Authentication: ', props);
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isLoading, setLoading] = useState(true);
-  const finishLoading = () => setTimeout(() => setLoading(false), 3000);
+  const finishLoading = () => setTimeout(() => setLoading(false), 1000);
 
   if (isLoading) {
     finishLoading()
@@ -49,7 +51,7 @@ const Authentication: React.FC = ({ children }) => {
       )
     }
     return (
-     <Redirect to="/login" />
+     <Redirect to="/signin" />
     )
   }
 }
@@ -80,17 +82,7 @@ const Navigator: React.FC = () => (
 </nav>
 )
 
-const Login: React.FC = () => {
-  console.log('Login');
-  return (
-    <div>
-      <h2>Login</h2>
-      <button onClick={() => alert('login')}>ログインする</button>
-    </div>
-  )
-}
 const Home: React.FC = () => {
-  console.log('home');
   return <h2>Home</h2>
 }
 const About: React.FC = () => <h2>About</h2>
