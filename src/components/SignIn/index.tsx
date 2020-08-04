@@ -4,8 +4,8 @@ import { Field, reduxForm } from 'redux-form';
 
 import { signIn } from '../../actions';
 
-const Component = (props) => {
-  const handleSubmit = (e) => {
+const Component = (props: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const { password } = e.target.elements;
     const PASSWORD = '1234'
@@ -23,7 +23,8 @@ const Component = (props) => {
         <Field
           name="password"
           component="input"
-          type="password"
+          // type="password"
+          type="text"
           placeholder="パスワード"
         />
         <button type="submit">ログインする</button>
@@ -33,7 +34,7 @@ const Component = (props) => {
 }
 
 const mapDispatchToProps = ({
-  signIn: (userName) => signIn(userName)
+  signIn: (userName: string) => signIn(userName)
 })
 
 const SignInComponent = reduxForm({

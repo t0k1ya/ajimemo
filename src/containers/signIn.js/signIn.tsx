@@ -5,7 +5,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const SignIn = (props) => {
+const SignIn = (props: any) => {
   const PASSWORD = '1234'
 
   if (props.password === PASSWORD) {
