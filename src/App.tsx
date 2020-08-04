@@ -9,51 +9,27 @@ import {
   Redirect,
 } from 'react-router-dom';
 import './App.css';
-import SignIn from './components/SignIn';
+import Auth from './containers/auth'
+import Login from './components/Login/login'
+import Logout from './components/Login/logout'
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <React.Fragment>
-            <Route path="/">
-              <Redirect to="/auth" />
-            </Route>
-            <Route to="/auth"  component={Authentication} />
-            <Route path="/signin" component={SignIn} />
-            <BaseLayout>
-              <Route path="/home" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/users" component={Users} />
-              <Route path="/topics" component={Topics} />
-            </BaseLayout>
-          </React.Fragment>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/logout" component={Logout} />
+
+        <Auth>
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Redirect from="/" to="/home" />
+          </Switch>
+        </Auth>
+        
+      </Switch>
+    </Router>
   );
-}
-
-const Authentication: React.FC = ({ children, ...props }) => {
-  console.log('Authentication: ', props);
-  const [isLoggedIn, setLoggedIn] = useState(false);
-  const [isLoading, setLoading] = useState(true);
-  const finishLoading = () => setTimeout(() => setLoading(false), 1000);
-
-  if (isLoading) {
-    finishLoading()
-    return <div>Loading</div>
-  } else {
-    if (isLoggedIn) {
-      return (
-        <Route children={children} />
-      )
-    }
-    return (
-     <Redirect to="/signin" />
-    )
-  }
 }
 
 const BaseLayout: React.FC = ({ children }) => (
