@@ -1,0 +1,32 @@
+.wrapper {
+  padding: 80px 0px;
+}
+
+.img {
+  width: 80%;
+  object-fit: contain;
+}
+
+.btn_wrapper {
+  margin-bottom: 10px;
+}
+
+.border {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+}
+.border:before, .border:after {
+	content: "";
+	flex-grow: 1;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.5);
+	display: block;
+}
+.border:before {
+	margin-right: .4em;
+}
+.border:after {
+	margin-left: .4em;
+}

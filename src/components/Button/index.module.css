@@ -1,0 +1,18 @@
+.btn {
+  width: 278px;
+  height: 45px;
+  font-size: 20px;
+  color: rgba(0, 0, 51, 0.5);
+  line-height: 23px;
+
+  border: 1px solid rgba(0, 0, 51, 0.5);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+.has_color {
+  color: #FFFFFF;
+  border: 0;
+  background: #000033;
+}
