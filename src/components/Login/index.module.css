@@ -1,9 +1,10 @@
 .wrapper {
-  padding: 80px 0px;
+  padding: 50px 0px;
 }
 
 .img {
   width: 80%;
+  padding-bottom: 50px;
   object-fit: contain;
 }
 
@@ -12,6 +13,7 @@
 }
 
 .border {
+  padding: 10px 0px;
 	color: rgba(0, 0, 0, 0.5);
 	font-size: 15px;
 	display: flex;
@@ -29,4 +31,14 @@
 }
 .border:after {
 	margin-left: .4em;
+}
+
+.signup_text_wrapper {
+  padding-top: 50px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.signup_text {
+  color: #000033;
+  font-size: 20px;
 }

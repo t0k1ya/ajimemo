@@ -1,7 +1,16 @@
 import React from 'react'
 import { Field } from 'redux-form'
-import { TextBox } from './text.tsx'
+import { TextBox } from './text'
 
-export const TextField: React.FC<{name: string}> = ({ name }) => (
-  <Field name={name} component={TextBox} />
+export const TextField: React.FC<{
+  name: string,
+  type: string,
+  placeHolder: string
+}> = ({ name, type, placeHolder }) => (
+  <Field
+    name={name}
+    type={type}
+    placeHolder={placeHolder}
+    component={TextBox} 
+  />
 )

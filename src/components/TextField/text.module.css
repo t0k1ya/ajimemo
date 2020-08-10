@@ -1,0 +1,12 @@
+.text_field {
+  width: 278px;
+  height: 45px;
+  /* border-radius: 10px; */
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 51, 0.5);
+	outline:0;
+}
+
+.text_field::placeholder {
+  text-align: center;
+}
