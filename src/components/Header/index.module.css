@@ -1,0 +1,7 @@
+.header_wrapper {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  /* 後で消す */
+}

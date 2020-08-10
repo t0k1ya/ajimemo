@@ -1,16 +1,12 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
 import { withRouter } from 'react-router-dom'
+import { LoginTypes } from '../../Types'
 import User from '../../containers/user'
 import { TextField } from '../TextField'
 import { Button } from '../Button'
 import styles from './index.module.css'
 import Icon from './images/aji_icon.png'
-
-interface LoginTypes {
-  name: string
-  password: string
-}
 
 const Login = (props: any) => {
 
@@ -21,10 +17,10 @@ const Login = (props: any) => {
 
   const click = async () => {
     try {
-      await User.login('email', 'password')
-      props.history.push('/home')
+      // TODO: awaitで書くと/homeが真っ白になる
+      User.login('email', 'password').then(() => props.history.push('/home'))
     } catch (e) {
-
+      console.log(e)
     }
   }
 

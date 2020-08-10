@@ -13,6 +13,7 @@ import { Layout } from './components/Layout'
 import Auth from './containers/auth'
 import Login from './components/Login/login'
 import Logout from './components/Login/logout'
+import Home from './components/Home'
 
 const App: React.FC = () => {
   return (
@@ -32,10 +33,6 @@ const App: React.FC = () => {
       </Switch>
     </Router>
   );
-}
-
-const Home: React.FC = () => {
-  return <h2>Home</h2>
 }
 
 const Topics: React.FC = () => {
