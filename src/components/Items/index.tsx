@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './styles/index.module.css'
 import { testData } from '../../mock/testData'
 import ItemTile from './itemTile'
+import { Fab } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 
 const Items: React.FC = () => {
   const items = (
@@ -19,6 +21,11 @@ const Items: React.FC = () => {
           </div>
         ))
       }
+      <div className={styles.add_icon}>
+        <Fab color="primary" aria-label="add">
+          <AddIcon />
+        </Fab>
+      </div>
     </div>
   )
   return items

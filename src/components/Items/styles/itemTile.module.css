@@ -1,10 +1,46 @@
 .wrapper {
+  margin-bottom: 10px;
   width: 100%;
   height: 600px;
   text-align: center;
+  background-color: #FFF;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  text-align: left;
+}
+
+.date {
+
+}
+
+.edit_btn {
+  width: 100%;
+  padding-right: 20px;
+  text-align: right;
+}
+
+.image {
+  width: 70%;
+  padding: 10px 50px;
 }
 
 .item_name {
   font-size: 20px;
   font-weight: 600;
+}
+
+.comment {
+  margin: auto;
+  text-align: left;
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, .5);
+  font-size: 12px;
+
 }
