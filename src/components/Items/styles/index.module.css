@@ -1,5 +1,7 @@
 .wrapper {
-  padding-top: 70px;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 40px;
   background-color: #e5e5e5;
 }
 

@@ -21,11 +21,11 @@ const Items: React.FC = () => {
           </div>
         ))
       }
-      <div className={styles.add_icon}>
+      {/* <div className={styles.add_icon}>
         <Fab color="primary" aria-label="add">
           <AddIcon />
         </Fab>
-      </div>
+      </div> */}
     </div>
   )
   return items
