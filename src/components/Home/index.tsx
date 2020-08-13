@@ -1,14 +1,12 @@
 import React from 'react'
-import Header from '../Header'
-import Footer from '../Footer'
+import Category from '../Category'
 import Items from '../Items'
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Header />
+      <Category />
       <Items />
-      <Footer />
     </div>
   )
 }

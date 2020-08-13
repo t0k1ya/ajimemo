@@ -10,10 +10,13 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout'
+import WithFooter from './components/Footer'
 import Auth from './containers/auth'
 import Login from './components/Login/login'
 import Logout from './components/Login/logout'
 import Home from './components/Home'
+import AddItemPage from './components/AddItemPage'
+
 
 const App: React.FC = () => {
   return (
@@ -25,7 +28,10 @@ const App: React.FC = () => {
 
           <Auth>
             <Switch>
-              <Route exact path="/home" component={Home} />
+              <WithFooter>
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/add" component={AddItemPage} />
+              </WithFooter>
               <Redirect exact from="/" to="/home" />
             </Switch>
           </Auth>
