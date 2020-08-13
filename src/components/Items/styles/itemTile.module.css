@@ -1,26 +1,24 @@
 .wrapper {
-  margin-bottom: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
+  width: auto;
+  margin-bottom: 7px;
+  padding: 10px 10px 20px;
   text-align: center;
   background-color: #FFF;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
 .header {
-  width: 100%;
+  width: auto;
+  padding: 10px;
   display: flex;
   text-align: left;
 }
 
 .date {
-  padding-left: 10px;
 }
 
 .edit_btn {
   width: 100%;
-  padding-right: 20px;
   text-align: right;
 }
 
