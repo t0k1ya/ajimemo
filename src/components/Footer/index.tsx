@@ -5,7 +5,12 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import AddBoxIcon from '@material-ui/icons/AddBox'
 import styles from './index.module.css'
 
+const notHaveFooter = (pathname: string) => pathname === '/login' || pathname === 'signup'
+
 const Footer: React.FC = (props: any) => {
+  const pathname = props.location.pathname
+  if (notHaveFooter(props.location.pathname)) return null
+
   return (
     <React.Fragment>
       { props.children }
