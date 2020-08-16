@@ -64,10 +64,7 @@ const Login = (props: any) => {
         <div>アカウントをお持ちでないですか？</div>
         <div
          className={styles.signup_text}
-         onClick={() => props.history.push({
-           pathname: '/signup',
-           state: { hasAccount: false }
-         })}
+         onClick={() => props.history.push('/signup')}
         >
           新規登録する
         </div>

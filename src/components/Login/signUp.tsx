@@ -62,7 +62,12 @@ const SignUp = (props: any) => {
 
       <div className={styles.signup_text_wrapper}>
         <div>アカウントをお持ちですか？</div>
-        <div className={styles.signup_text}>ログインする</div>
+        <div
+         className={styles.signup_text}
+         onClick={() => props.history.push('/login')}
+        >
+          ログインする
+        </div>
       </div>
     </div>
   ) 
