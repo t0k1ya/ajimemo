@@ -4,10 +4,24 @@
 
 }
 
-.img {
+.img_login {
   width: 80%;
   padding-bottom: 50px;
   object-fit: contain;
+}
+
+.img_signup {
+  width: 50%;
+  padding-bottom: 30px;
+  object-fit: contain;
+}
+
+.description {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 25px;
+  color: #000033;
+  font-weight: 500;
 }
 
 .btn_wrapper {

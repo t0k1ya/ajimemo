@@ -26,7 +26,7 @@ const Login = (props: any) => {
 
   return (
     <div className={styles.wrapper}>
-      <img className={styles.img} src={Icon} alt="" />
+      <img className={styles.img_login} src={Icon} alt="" />
       <div className={styles.btn_wrapper}>
         <TextField
           name="name"

@@ -26,7 +26,11 @@ const SignUp = (props: any) => {
 
   return (
     <div className={styles.wrapper}>
-      <img className={styles.img} src={Icon} alt="" />
+      <img className={styles.img_signup} src={Icon} alt="" />
+      <div className={styles.description}>
+        楽しんだ味を記録して<br />
+        味覚と育てましょう
+      </div>
       <div className={styles.btn_wrapper}>
         <TextField
           name="name"
