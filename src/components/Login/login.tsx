@@ -12,13 +12,13 @@ const Login = (props: any) => {
 
   if (User.isLoggedIn()) {
     alert('ログイン済みです')
-    props.history.push('/home')
+    props.history.push('/')
   }
 
   const click = async () => {
     try {
-      // TODO: awaitで書くと/homeが真っ白になる
-      User.login('email', 'password').then(() => props.history.push('/home'))
+      await User.login('email', 'password')
+      props.history.push('/')
     } catch (e) {
       console.log(e)
     }

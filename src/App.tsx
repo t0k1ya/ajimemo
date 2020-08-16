@@ -6,7 +6,7 @@ import {
   Link,
   useRouteMatch,
   useParams,
-  Redirect,
+  // Redirect,
 } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout'
@@ -24,17 +24,17 @@ const App: React.FC = () => {
       <Switch>
         <Layout>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />
-
-          <Auth>
-            <Switch>
+          <Route exact path="/profile" component={Logout} />
+          {/* <Auth><Switch></Switch></Auth>だとauth.tsx内でprops.childrenの孫コンポーネントがレンダリングされない */}
+          <Switch>
+            <Auth>
               <WithFooter>
-                <Route exact path="/home" component={Home} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/add" component={AddItemPage} />
               </WithFooter>
-              <Redirect exact from="/" to="/home" />
-            </Switch>
-          </Auth>
+              {/* <Redirect exact from="/" to="/home" /> */}
+            </Auth>
+          </Switch>
         </Layout>
       </Switch>
     </Router>
