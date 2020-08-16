@@ -13,6 +13,7 @@ import { Layout } from './components/Layout'
 import WithFooter from './components/Footer'
 import Auth from './containers/auth'
 import Login from './components/Login/login'
+import SignUp from './components/Login/login'
 import Logout from './components/Login/logout'
 import Home from './components/Home'
 import AddItemPage from './components/AddItemPage'
@@ -24,13 +25,14 @@ const App: React.FC = () => {
       <Switch>
         <Layout>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/profile" component={Logout} />
+          <Route exact path="/signup" component={SignUp} />
           {/* <Auth><Switch></Switch></Auth>だとauth.tsx内でprops.childrenの孫コンポーネントがレンダリングされない */}
           <Switch>
             <Auth>
               <WithFooter>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/add" component={AddItemPage} />
+                <Route exact path="/profile" component={Logout} />
               </WithFooter>
               {/* <Redirect exact from="/" to="/home" /> */}
             </Auth>

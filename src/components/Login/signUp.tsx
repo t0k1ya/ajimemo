@@ -8,7 +8,7 @@ import { Button } from '../Button'
 import styles from './index.module.css'
 import Icon from './images/aji_icon.png'
 
-const Login = (props: any) => {
+const SignUp = (props: any) => {
 
   if (User.isLoggedIn()) {
     alert('ログイン済みです')
@@ -44,7 +44,7 @@ const Login = (props: any) => {
       <div className={styles.btn_wrapper}>
         <Button
           onClick={() => click()}
-          title="ログイン"
+          title="登録する"
           hasColor
         />
       </div>
@@ -56,21 +56,13 @@ const Login = (props: any) => {
       <div className={styles.btn_wrapper}>
         <Button
           onClick={() => click()}
-          title="Googleでログイン"
+          title="Googleで登録"
         />
       </div>
 
       <div className={styles.signup_text_wrapper}>
-        <div>アカウントをお持ちでないですか？</div>
-        <div
-         className={styles.signup_text}
-         onClick={() => props.history.push({
-           pathname: '/signup',
-           state: { hasAccount: false }
-         })}
-        >
-          新規登録する
-        </div>
+        <div>アカウントをお持ちですか？</div>
+        <div className={styles.signup_text}>ログインする</div>
       </div>
     </div>
   ) 
@@ -78,6 +70,6 @@ const Login = (props: any) => {
 
 const Component = reduxForm<LoginTypes, any>({
   form: 'login'
-})(Login)
+})(SignUp)
 
 export default withRouter(Component)
