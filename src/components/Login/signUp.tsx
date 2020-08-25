@@ -15,15 +15,15 @@ const SignUp = (props: any) => {
     props.history.push('/')
   }
 
-  const click = async () => {
-    try {
-      await User.login('email', 'password')
-      props.history.push('/')
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
+  // const signUp = async () => {
+  //   try {
+  //     await User.login('email', 'password')
+  //     props.history.push('/')
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
+  console.log('props: ', props)
   return (
     <div className={styles.wrapper}>
       <img className={styles.img_signup} src={Icon} alt="" />
@@ -31,27 +31,28 @@ const SignUp = (props: any) => {
         楽しんだ味を記録して<br />
         味覚と育てましょう
       </div>
-      <div className={styles.btn_wrapper}>
-        <TextField
-          name="name"
-          type="text"
-          placeHolder="ユーザ名、メールアドレス"
-        />
-      </div>
-      <div className={styles.btn_wrapper}>
-        <TextField
-          name="name"
-          type="password"
-          placeHolder="パスワード"
-        />
-      </div>
-      <div className={styles.btn_wrapper}>
-        <Button
-          onClick={() => click()}
-          title="登録する"
-          hasColor
-        />
-      </div>
+      <form onSubmit={props.handleSubmit(User.signUp)} >
+        <div className={styles.btn_wrapper}>
+          <TextField
+            name="name"
+            type="text"
+            placeHolder="ユーザ名、メールアドレス"
+          />
+        </div>
+        <div className={styles.btn_wrapper}>
+          <TextField
+            name="name"
+            type="password"
+            placeHolder="パスワード"
+          />
+        </div>
+        <div className={styles.btn_wrapper}>
+          <Button
+            title="登録する"
+            hasColor
+          />
+        </div>
+      </form>
 
       <div className={styles.border}>
         または
@@ -59,7 +60,7 @@ const SignUp = (props: any) => {
 
       <div className={styles.btn_wrapper}>
         <Button
-          onClick={() => click()}
+          // onClick={}
           title="Googleで登録"
         />
       </div>

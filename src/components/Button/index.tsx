@@ -4,7 +4,7 @@ import styles from './index.module.css'
 interface propsTypes {
   title: string,
   hasColor?: boolean,
-  onClick: () => {},
+  onClick?: () => {},
 }
 
 export const Button: React.FC<propsTypes> = ({ title, hasColor, onClick }) => {

@@ -1,3 +1,5 @@
+import firebase from '../Firebase'
+
 class User {
   isLoggedIn = () => this.get('isLoggedIn') === 'true';
 
@@ -11,6 +13,17 @@ class User {
       return ret
     }
     return null
+  }
+
+  signUp = async (email: string, password: string) => {
+    console.log('email: ', email)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        console.log('authentication_response: ', res);
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 
   login = async (email: string, password: string) => {
