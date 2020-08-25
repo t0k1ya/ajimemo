@@ -23,7 +23,6 @@ const SignUp = (props: any) => {
   //     console.log(e)
   //   }
   // }
-  console.log('props: ', props)
   return (
     <div className={styles.wrapper}>
       <img className={styles.img_signup} src={Icon} alt="" />
@@ -34,14 +33,14 @@ const SignUp = (props: any) => {
       <form onSubmit={props.handleSubmit(User.signUp)} >
         <div className={styles.btn_wrapper}>
           <TextField
-            name="name"
+            name="email"
             type="text"
             placeHolder="ユーザ名、メールアドレス"
           />
         </div>
         <div className={styles.btn_wrapper}>
           <TextField
-            name="name"
+            name="password"
             type="password"
             placeHolder="パスワード"
           />

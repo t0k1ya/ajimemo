@@ -10,3 +10,8 @@ export interface Item {
   rating?: number,
   comment?: string,
 }
+
+export interface SignUpTypes {
+  email: string,
+  password: string,
+}
