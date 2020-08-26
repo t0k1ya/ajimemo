@@ -31,7 +31,7 @@ const Login = (props: any) => {
         <TextField
           name="name"
           type="text"
-          placeHolder="ユーザ名、メールアドレス"
+          placeHolder="メールアドレス"
         />
       </div>
       <div className={styles.btn_wrapper}>

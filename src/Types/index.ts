@@ -12,6 +12,7 @@ export interface Item {
 }
 
 export interface SignUpTypes {
+  name: string,
   email: string,
   password: string,
 }

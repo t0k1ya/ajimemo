@@ -1,7 +1,7 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
 import { withRouter } from 'react-router-dom'
-import { LoginTypes } from '../../Types'
+import { LoginTypes, SignUpTypes } from '../../Types'
 import User from '../../containers/user'
 import { TextField } from '../TextField'
 import { Button } from '../Button'
@@ -15,14 +15,14 @@ const SignUp = (props: any) => {
     props.history.push('/')
   }
 
-  // const signUp = async () => {
-  //   try {
-  //     await User.login('email', 'password')
-  //     props.history.push('/')
-  //   } catch (e) {
-  //     console.log(e)
-  //   }
-  // }
+  const gotoHome = async (params: SignUpTypes) => {
+    try {
+      User.signUp(params)
+      props.history.push('/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
   return (
     <div className={styles.wrapper}>
       <img className={styles.img_signup} src={Icon} alt="" />
@@ -30,12 +30,19 @@ const SignUp = (props: any) => {
         楽しんだ味を記録して<br />
         味覚と育てましょう
       </div>
-      <form onSubmit={props.handleSubmit(User.signUp)} >
+      <form onSubmit={props.handleSubmit(gotoHome)} >
+        <div className={styles.btn_wrapper}>
+          <TextField
+            name="name"
+            type="text"
+            placeHolder="ニックネーム"
+          />
+        </div>
         <div className={styles.btn_wrapper}>
           <TextField
             name="email"
-            type="text"
-            placeHolder="ユーザ名、メールアドレス"
+            type="email"
+            placeHolder="メールアドレス"
           />
         </div>
         <div className={styles.btn_wrapper}>

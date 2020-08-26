@@ -1,5 +1,7 @@
-import firebase from '../Firebase'
-import { SignUpTypes } from '../Types'
+import firebase, { firestore } from '../Firebase'
+import { 
+  SignUpTypes,
+} from '../Types'
 
 class User {
   isLoggedIn = () => this.get('isLoggedIn') === 'true';
@@ -17,14 +19,19 @@ class User {
   }
 
   signUp = async (params: SignUpTypes) => {
-    console.log('email: ', params.email)
-    console.log('password: ', params.password)
     firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
-      .then(res => {
-        console.log('authentication_response: ', res);
+      .then((res: any) => {
+        const uid = res.user.uid
+        const docId = firestore.collection('users').doc().id
+        firestore.collection('users').doc(docId).set({
+          docId: docId,
+          uid,
+          name: params.name,
+          email: params.email
+        })
       })
       .catch(e => {
-        console.log(e)
+        alert(e.message)
       })
   }
 
