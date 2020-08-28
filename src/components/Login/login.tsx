@@ -15,10 +15,10 @@ const Login = (props: any) => {
     props.history.push('/')
   }
 
-  const click = async () => {
+  const gotoHome = async (params: LoginTypes) => {
     try {
-      await User.login('email', 'password')
-      props.history.push('/')
+      const success = await User.login(params.email, params.password)
+      if (success) props.history.push('/')
     } catch (e) {
       console.log(e)
     }
@@ -27,27 +27,28 @@ const Login = (props: any) => {
   return (
     <div className={styles.wrapper}>
       <img className={styles.img_login} src={Icon} alt="" />
-      <div className={styles.btn_wrapper}>
-        <TextField
-          name="name"
-          type="text"
-          placeHolder="メールアドレス"
-        />
-      </div>
-      <div className={styles.btn_wrapper}>
-        <TextField
-          name="name"
-          type="password"
-          placeHolder="パスワード"
-        />
-      </div>
-      <div className={styles.btn_wrapper}>
-        <Button
-          onClick={() => click()}
-          title="ログイン"
-          hasColor
-        />
-      </div>
+      <form onSubmit={props.handleSubmit(gotoHome)} >
+        <div className={styles.btn_wrapper}>
+          <TextField
+            name="email"
+            type="email"
+            placeHolder="メールアドレス"
+          />
+        </div>
+        <div className={styles.btn_wrapper}>
+          <TextField
+            name="password"
+            type="password"
+            placeHolder="パスワード"
+          />
+        </div>
+        <div className={styles.btn_wrapper}>
+          <Button
+            title="ログイン"
+            hasColor
+          />
+        </div>
+      </form>
 
       <div className={styles.border}>
         または
@@ -55,7 +56,6 @@ const Login = (props: any) => {
 
       <div className={styles.btn_wrapper}>
         <Button
-          onClick={() => click()}
           title="Googleでログイン"
         />
       </div>

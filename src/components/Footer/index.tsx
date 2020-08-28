@@ -17,6 +17,7 @@ const Footer: React.FC = (props: any) => {
   const [ currentTab, setCurrentTab ] = useState(props.location.pathname)
 
   if (notHaveFooter(props.location.pathname)) return null
+  window.scrollTo(0, 0);
   return (
     <React.Fragment>
       { props.children }

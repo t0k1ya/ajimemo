@@ -19,7 +19,7 @@ class User {
   }
 
   signUp = async (params: SignUpTypes) => {
-    firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
+    return firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
       .then((res: any) => {
         const uid = res.user.uid
         const docId = firestore.collection('users').doc().id
@@ -29,6 +29,7 @@ class User {
           name: params.name,
           email: params.email
         })
+        this.login(params.email, params.password)
       })
       .catch(e => {
         alert(e.message)
@@ -36,9 +37,14 @@ class User {
   }
 
   login = async (email: string, password: string) => {
-    this.set('isLoggedIn', 'true')
-
-    return true
+    return firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.set('isLoggedIn', 'true')
+        return true
+      })
+      .catch((e) => {
+        alert(e.message)
+      })
   }
 
   logout = async () => {

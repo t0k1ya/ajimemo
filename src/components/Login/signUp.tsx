@@ -17,7 +17,7 @@ const SignUp = (props: any) => {
 
   const gotoHome = async (params: SignUpTypes) => {
     try {
-      User.signUp(params)
+      await User.signUp(params)
       props.history.push('/')
     } catch (e) {
       console.log(e)

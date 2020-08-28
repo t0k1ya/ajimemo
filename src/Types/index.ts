@@ -1,5 +1,5 @@
 export interface LoginTypes {
-  name: string
+  email: string
   password: string
 }
 
