@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from './../Header'
-import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
+import { ImageSection } from './imageSection'
 import StarRatingComponent from 'react-star-rating-component'
 
 import styles from './styles/index.module.css'
@@ -13,26 +13,8 @@ const AddItemPage = () => {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <div className={styles.scrolling_wrapper} >
-        <div className={styles.item}>
-          <div className={`${styles.picture_num} ${styles.photoIcon}`}>
-            <AddPhotoAlternateIcon fontSize="large" width="200%" />
-          </div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.picture_num}>2</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.picture_num}>3</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.picture_num}>4</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.picture_num}>5</div>
-        </div>
-      </div>
-
+      
+      <ImageSection />
       <div className={styles.item_detail}>
         <div className={`${styles.input_field} ${styles.item_name}`}>
           <label>商品名</label>
