@@ -2,6 +2,7 @@
 
 # files
 .env
+/src/Firebase.ts
 
 # dependencies
 /node_modules

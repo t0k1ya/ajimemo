@@ -9,4 +9,4 @@ const Auth = (props: any) => {
   return <Redirect to="/login" />
 }
 
-  export default withRouter(Auth)
+export default withRouter(Auth)
